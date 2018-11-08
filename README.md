@@ -1,10 +1,12 @@
 # WooCommerce Subscriptions Auto Add Resubscribe Coupon
 
-This plugin automatically adds a coupon to every resubscribe cart. The coupon code should be set as the constant `WOOCOMMERCE_SUBSCRIPTIONS_AUTO_RESUBSCRIBE_COUPON`. For example:
+This plugin automatically adds a specified coupon to every resubscribe cart. The coupon code should be set as the constant `WOOCOMMERCE_SUBSCRIPTIONS_AUTO_RESUBSCRIBE_COUPON`. For example:
 
 ```php
 define( 'WOOCOMMERCE_SUBSCRIPTIONS_AUTO_RESUBSCRIBE_COUPON', 'my-coupon-code' );
 ```
+
+Please note that the specified coupon will not be restricted to _only_ work on resubscribe carts.
 
 ## Installation
 

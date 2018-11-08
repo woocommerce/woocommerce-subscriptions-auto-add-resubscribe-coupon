@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name: WooCommerce Subscriptions Auto Add Resubscribe Coupon
+ * Plugin Name: WooCommerce Subscriptions - Auto Add Resubscribe Coupon
  * Plugin URI: https://github.com/Prospress/woocommerce-subscriptions-auto-add-resubscribe-coupon/blob/master/README.md
- * Description: This plugin automatically adds a coupon to every resubscribe cart.
+ * Description: This plugin automatically adds a specific coupon to every resubscribe cart.
  * Author: Prospress Inc.
  * Author URI: https://prospress.com/
  * License: GPLv3
@@ -36,11 +36,11 @@
 require_once( 'includes/class-pp-dependencies.php' );
 
 if ( false === PP_Dependencies::is_woocommerce_active( '3.0' ) ) {
-	PP_Dependencies::enqueue_admin_notice( 'WooCommerce Subscriptions Auto Add Resubscribe Coupon', 'WooCommerce', '3.0' );
+	PP_Dependencies::enqueue_admin_notice( 'WooCommerce Subscriptions - Auto Add Resubscribe Coupon', 'WooCommerce', '3.0' );
 	return;
 }
 
 if ( false === PP_Dependencies::is_subscriptions_active( '2.1' ) ) {
-	PP_Dependencies::enqueue_admin_notice( 'WooCommerce Subscriptions Auto Add Resubscribe Coupon', 'WooCommerce Subscriptions', '2.1' );
+	PP_Dependencies::enqueue_admin_notice( 'WooCommerce Subscriptions - Auto Add Resubscribe Coupon', 'WooCommerce Subscriptions', '2.1' );
 	return;
 }

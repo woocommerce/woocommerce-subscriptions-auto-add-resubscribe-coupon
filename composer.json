@@ -1,6 +1,6 @@
 {
-    "name": "prospress/{plugin_slug}",
-    "description": "{plugin_short_description}",
+    "name": "prospress/woocommerce-subscriptions-auto-add-resubscribe-coupon",
+    "description": "WP Plugin to automatically add a specific coupon to WooCommerce Subscription resubscribe carts.",
     "type": "project",
     "license": "GPL-3.0-only"
 }
