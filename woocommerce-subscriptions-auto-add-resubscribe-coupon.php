@@ -44,3 +44,47 @@ if ( false === PP_Dependencies::is_subscriptions_active( '2.1' ) ) {
 	PP_Dependencies::enqueue_admin_notice( 'WooCommerce Subscriptions - Auto Add Resubscribe Coupon', 'WooCommerce Subscriptions', '2.1' );
 	return;
 }
+
+
+/**
+ * Class WCS_Auto_Resubscribe_Coupon.
+ *
+ * @since 1.0
+ */
+class WCS_Auto_Resubscribe_Coupon {
+
+	/**
+	 * Add cart hook.
+	 */
+	static function init() {
+		add_action( 'woocommerce_before_calculate_totals', [ __CLASS__, 'add_coupon_to_cart' ] );
+	}
+
+	/**
+	 * Adds a coupon to the cart is the cart contains a resubscribe.
+	 * We don't want to prevent the coupon from being added if it's not a resubscribe cart.
+	 */
+	static function add_coupon_to_cart() {
+		$coupon = self::get_coupon_code();
+
+		if ( ! $coupon || WC()->cart->is_empty() || WC()->cart->has_discount( $coupon ) || ! wcs_cart_contains_resubscribe() ) {
+			return;
+		}
+
+		WC()->cart->apply_coupon( $coupon );
+	}
+
+	/**
+	 * @return bool|string
+	 */
+	static function get_coupon_code() {
+		if ( defined( 'WOOCOMMERCE_SUBSCRIPTIONS_AUTO_RESUBSCRIBE_COUPON' ) ) {
+			return WOOCOMMERCE_SUBSCRIPTIONS_AUTO_RESUBSCRIBE_COUPON;
+		}
+		return false;
+	}
+
+
+}
+
+WCS_Auto_Resubscribe_Coupon::init();
