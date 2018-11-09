@@ -10,7 +10,7 @@
  * Requires at least: 4.0
  * Tested up to: 4.8
  *
- * GitHub Plugin URI: Prospress/{plugin_slug}
+ * GitHub Plugin URI: Prospress/woocommerce-subscriptions-auto-add-resubscribe-coupon
  * GitHub Branch: master
  *
  * Copyright 2018 Prospress, Inc.  (email : freedoms@prospress.com)
